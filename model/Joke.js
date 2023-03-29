@@ -11,17 +11,13 @@ const JokeSchema = new mongoose.Schema({
         required:true
     },
    
-    type: [
-        {
-          type1: {
-            type: String,
-            
-          },
-          type2 :{
-            type:String
-          }
-        }
-      ],
+    type: {
+      type : String
+    },
+
+    type1 :{
+      type : String
+    } 
 
       
 });
