@@ -96,7 +96,7 @@ router.get('/:type', async (req, res) => {
 
 
 
-  // @route   delete api/joke
+// @route   delete api/joke
 // @desc   delete a joke
 // @access  Private
 
@@ -114,5 +114,28 @@ router.put('/:id', auth,async (req, res) => {
       res.status(500).send('Server error');
     }
   });
+
+
+// @route   GET api/Joke/:id
+// @desc    Get Joke by id
+// @access  private
+router.get('/:id', async (req, res) => {
+  try {
+    const joke = await Joke.findById(req.params.id);
+
+    if (!joke) {
+      return res.status(404).json({ msg: 'Joke not found' });
+    }
+
+    res.json(joke);
+  } catch (err) {
+    console.error(err.message);
+    if (err.kind === 'String') {
+      return res.status(404).json({ msg: 'joke not found' });
+    }
+    res.status(500).send('Server error');
+  }
+});
+
 
 module.exports = router;
