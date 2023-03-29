@@ -23,19 +23,27 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
+    const api_key = req.headers["x-api-key"];
+    
     const { title,body } = req.body;
 
     try {
-      
-     let joke = new Joke({
-        title,
-        body
-      });
-
-      await joke.save(); 
-
-
-      res.send('joke Added Succesfully');
+      if (api_key === "api_123_xyz_@") {
+        // Add new joke to database
+         
+          let joke = new Joke({
+            title,
+            body
+          });
+  
+          await joke.save(); 
+  
+  
+          res.send('joke Added Succesfully');
+      } else {
+        res.status(401).json({ error: "Invalid API key" });
+      }
+     
     } catch (err) {
       console.error(err.message);
       
