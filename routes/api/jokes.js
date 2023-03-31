@@ -15,6 +15,7 @@ router.post(
     check('title', 'Enter a Joke title').not().isEmpty(), //route validation
    
     check('body', 'Enter a valid Joke ').not().isEmpty(),
+    check('type', 'Enter a valid type ').not().isEmpty(),
    
   ],
   async (req, res) => {
@@ -25,7 +26,7 @@ router.post(
 
     const api_key = req.headers["x-api-key"];
     
-    const { title,body } = req.body;
+    const { title,body,type } = req.body;
 
     try {
       if (api_key === "api_123_xyz_@") {
@@ -33,7 +34,8 @@ router.post(
          
           let joke = new Joke({
             title,
-            body
+            body,
+            type
           });
   
           await joke.save(); 
@@ -96,12 +98,12 @@ router.get('/:type', async (req, res) => {
 
 
 
-// @route   delete api/joke
-// @desc   delete a joke
+// @route   UPDATE api/joke
+// @desc   update a joke
 // @access  Private
 
 
-router.put('/:id', auth,async (req, res) => {
+router.post('/:id', auth,async (req, res) => {
     try {
       console.log(req.body);
       const test3 = await Joke.findByIdAndUpdate(req.params.id, {
@@ -137,5 +139,19 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+
+// @route   GET api/joke
+//@desc get all joke details
+// @access  Public
+
+router.get('/', async (req, res) => {
+  try {
+    const jokes = await Joke.find();
+    res.json(jokes);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
 
 module.exports = router;
