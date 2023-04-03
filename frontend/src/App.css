@@ -39,14 +39,26 @@
   
   /* Utilities */
   .container {
-    max-width: 1100px;
-    margin: auto;
-    overflow: hidden;
-    padding: 0 2rem;
+    overflow-y: scroll ;
+    max-width: 100%;
+    height: fit-content;
+   
+    padding: 0 4rem;
     margin-top: 6rem;
     margin-bottom: 3rem;
   }
+  .container::-webkit-scrollbar {
+    width: 0.5em; /* set the width of the scrollbar */
+  }
   
+  .container::-webkit-scrollbar-track {
+    background-color: #f1f1f100; /* set the color of the scrollbar track */
+  }
+  
+  .container::-webkit-scrollbar-thumb {
+    background-color: #88888804; /* set the color of the scrollbar thumb */
+    border-radius: 0.2em; /* set the radius of the scrollbar thumb */
+  }
   /* Text Styles*/
   .x-large {
     font-size: 4rem;

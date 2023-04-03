@@ -6,7 +6,7 @@ import { logout } from '../../actions/auth';
 export const Navbar = ({auth: { isAuthenticated }, logout}) => {
   const authLinks = (
    <><Link to={'/'}> <button type="button" class="btn btn-primary mr-2" onClick={logout}>Logout</button></Link>
-   <Link to="/submit"> <button type="button" class="btn btn-light">Submit a Joke</button></Link>
+    <Link to="/moderate"> <button type="button" class="btn btn-light">Review Jokes</button></Link>
    </>
       
   );

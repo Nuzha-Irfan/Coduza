@@ -27,7 +27,7 @@ export const Submit = (formData, navigate) => async (dispatch) => {
         showConfirmButton: false,
         timer: 1500,
       });
-      
+      navigate('/')
     } catch (err) {
       const errors = err.response.data.errors;
       if (errors) {

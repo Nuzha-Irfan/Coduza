@@ -39,7 +39,7 @@ const JokeItem = ({ joke:{_id,title,body,type}, deleteJoke,updateJokeByID }) => 
           inputOptions: {
             '': {
               Wierd: 'Wierd',
-              funny: 'Funny',
+              Funny: 'Funny',
              
             },
           

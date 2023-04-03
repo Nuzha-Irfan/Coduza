@@ -25,42 +25,7 @@ const Login = ({login,isAuthenticated }) => {
   }
 
   return (
-    // <section className="container container-margin-top-override">
-        
-    // <div className="landing-inner1">
-    // <div className="card2  text-white bg-dark mb-3 rounded" >
-    //     <div className="card-header">
-    //       <h4>Login</h4>
-    //     </div>
-    //     <div className="card-body">
-    // <form className="form" onSubmit={onSubmit}>
-    //   <div className="form-group">
-    //     <input
-    //       type="email"
-    //       placeholder="Email Address"
-    //       name="email"
-    //       value={email}
-    //       onChange={onChange}
-    //     />
-    //   </div>
-    //   <div className="form-group">
-    //     <input
-    //       type="password"
-    //       placeholder="Password"
-    //       name="password"
-    //       value={password}
-    //       onChange={onChange}
-    //       minLength="6"
-    //     />
-    //   </div>
-    //   <input type="submit" className="btn btn-primary" value="Login" />
-    // </form>
-    // </div>
-    //   </div>
     
-    // </div>
-    // </section>
-
 
 <div class="login-form-bd">
   <div class="form-wrapper">

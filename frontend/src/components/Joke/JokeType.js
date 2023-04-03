@@ -28,7 +28,7 @@ const JokeType = props => {
         >
           <option value="">Select an option</option>
           <option value="Wierd">Wierd</option>
-          <option value="funny">Funny</option>
+          <option value="Funny">Funny</option>
         
         </select>
 					
